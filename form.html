@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+    <!-- Simple CSS for styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>User Registration</h2>
+        <form id="registrationForm" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="10-digit number" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="errorMessage" class="error"></div>
+    </div>
+
+    <!-- Basic JavaScript for validation -->
+    <script>
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            errorMessage.textContent = '';
+
+            // Simple validation
+            if (!name || !email || !phone) {
+                errorMessage.textContent = 'All fields are required!';
+                return false;
+            }
+
+            // Email format check
+            if (!email.includes('@')) {
+                errorMessage.textContent = 'Invalid email format!';
+                return false;
+            }
+
+            // Phone number check (10 digits)
+            if (phone.length !== 10 || isNaN(phone)) {
+                errorMessage.textContent = 'Phone must be 10 digits!';
+                return false;
+            }
+
+            // If valid, proceed (you'll need backend code here)
+            alert('Form submitted successfully!');
+            return false; // Prevent form from actually submitting (for now)
+        }
+    </script>
+</body>
+</html>
