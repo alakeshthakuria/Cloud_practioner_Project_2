@@ -38,8 +38,11 @@ This architecture represents a cloud-based deployment on Microsoft Azure, utiliz
 - Create a new database:`CREATE DATABASE user_data;`
 - Create a new user for the front-end VM:`CREATE USER 'frontend_user'@'<FRONTEND_VM_PRIVATE_IP>' IDENTIFIED BY 'StrongPassword123!';`
 - Grant privileges to the user:`GRANT ALL PRIVILEGES ON user_data.* TO 'frontend_user'@'<FRONTEND_VM_PRIVATE_IP>';`
-- Apply changes: ```FLUSH PRIVILEGES;
-EXIT;```
+- Apply changes:
+  ```
+   FLUSH PRIVILEGES;
+   EXIT;
+  ```
 
 ### 3. Front-End VM Setup (Continued)
 
