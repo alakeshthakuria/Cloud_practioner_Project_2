@@ -25,3 +25,22 @@ This architecture represents a cloud-based deployment on Microsoft Azure, utiliz
 #### 1.1 Create the Front-End Application
 - Create an HTML form (form.html) - Version 1.0
 - Start a simple HTTP server to serve the form: `python3 -m http.server 8000`
+
+### 2. Database VM Setup
+#### 2.1 Install and Configure MySQL Server
+- Install MySQL Server: `sudo apt install mysql-server -y`
+- Secure the MySQL installation: `sudo mysql_secure_installation`
+- Allow remote access by modifying MySQL configuration: `sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf`
+- Change bind-address from 127.0.0.1 to 0.0.0.0 or Private IP of front-end VM.
+- Restart MySQL service:`sudo systemctl restart mysql`
+#### 2.2 Configure Database and User
+- Log into MySQL:`sudo mysql -u root`
+- Create a new database:`CREATE DATABASE user_data;`
+- Create a new user for the front-end VM:`CREATE USER 'frontend_user'@'<FRONTEND_VM_PRIVATE_IP>' IDENTIFIED BY 'StrongPassword123!';`
+- Grant privileges to the user:`GRANT ALL PRIVILEGES ON user_data.* TO 'frontend_user'@'<FRONTEND_VM_PRIVATE_IP>';`
+- Apply changes: ```FLUSH PRIVILEGES;
+EXIT;```
+
+### 3. Front-End VM Setup (Continued)
+
+
