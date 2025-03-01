@@ -24,5 +24,4 @@ This architecture represents a cloud-based deployment on Microsoft Azure, utiliz
 ### 1. Front-End VM Setup
 #### 1.1 Create the Front-End Application
 - Create an HTML form (form.html) - Version 1.0
-- Start a simple HTTP server to serve the form:
-  'python3 -m http.server 8000'
+- Start a simple HTTP server to serve the form: `python3 -m http.server 8000`
