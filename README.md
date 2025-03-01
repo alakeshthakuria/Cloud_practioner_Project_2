@@ -75,6 +75,14 @@ This architecture represents a cloud-based deployment on Microsoft Azure, utiliz
     phone VARCHAR(20) NOT NULL
   );
   ```
+### 5. Final Steps on Front-End VM
+#### 5.1 Start Front-End and Backend Services
+- Start the front-end HTTP server:`python3 -m http.server 8000`
+- Activate the virtual environment and start the backend:
+  ```
+  source myenv/bin/activate
+  python3 app.py
+  ```
 
 
 
