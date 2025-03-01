@@ -66,12 +66,15 @@ This architecture represents a cloud-based deployment on Microsoft Azure, utiliz
 #### 4.1 Create a User Table
 - Log in to MySQL:`sudo mysql -u root`
 - Select the user_data database:`USE user_data;`
-- Create the users table:`CREATE TABLE users (
+- Create the users table:
+  ```
+  CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     phone VARCHAR(20) NOT NULL
-);`
+  );
+  ```
 
 
 
