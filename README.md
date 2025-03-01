@@ -45,5 +45,33 @@ This architecture represents a cloud-based deployment on Microsoft Azure, utiliz
   ```
 
 ### 3. Front-End VM Setup (Continued)
+#### 3.1 Test Database Connection
+- Verify that the front-end VM can connect to MySQL:`mysql -u frontend_user -h <MYSQL_VM_PRIVATE_IP> -p`
+#### 3.2 Set Up Backend (Flask App)
+- Install Python virtual environment support:`sudo apt install python3-venv -y`
+- Create a virtual environment:
+  ```
+  python3 -m venv myenv
+  source myenv/bin/activate
+  ```
+- Install required dependencies:`pip install flask mysql-connector-python`
+- Create app.py (backend script to handle form submissions).
+- Activate the virtual environment:`source myenv/bin/activate`
+- Start the backend server:`python3 app.py`
+#### 3.3 Update Front-End Form
+- Update form.html to Version 1.1, modifying the form action:`<form id="registrationForm" action="http://20.15.112.217:5000/submit" method="POST" onsubmit="return validateForm()">`
+
+
+### 4. Database VM Setup (Continued)
+#### 4.1 Create a User Table
+- Log in to MySQL:`sudo mysql -u root`
+- Select the user_data database:`USE user_data;`
+- Create the users table:`CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone VARCHAR(20) NOT NULL
+);`
+
 
 
