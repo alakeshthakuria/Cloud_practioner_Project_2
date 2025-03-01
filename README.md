@@ -84,5 +84,7 @@ This architecture represents a cloud-based deployment on Microsoft Azure, utiliz
   python3 app.py
   ```
 
+Project update after completing above step
+
 
 
