@@ -84,7 +84,10 @@ This architecture represents a cloud-based deployment on Microsoft Azure, utiliz
   python3 app.py
   ```
 
-Project update after completing above step
+
+
+Project update after completing above step:
+<a href="" target="blank"><img align="center" src="https://github.com/alakeshthakuria/Cloud_practioner_Project_2/blob/main/Project_2_updated.png" height="400" /></a>
 
 
 
