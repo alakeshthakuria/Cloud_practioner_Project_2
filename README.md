@@ -46,6 +46,7 @@ This architecture represents a cloud-based deployment on Microsoft Azure, utiliz
 
 ### 3. Front-End VM Setup (Continued)
 #### 3.1 Test Database Connection
+- First install mysql client on Front-end VM: `sudo apt install mysql-client -y`
 - Verify that the front-end VM can connect to MySQL:`mysql -u frontend_user -h <MYSQL_VM_PRIVATE_IP> -p`
 #### 3.2 Set Up Backend (Flask App)
 - Install Python virtual environment support:`sudo apt install python3-venv -y`
