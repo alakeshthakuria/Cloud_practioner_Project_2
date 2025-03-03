@@ -52,7 +52,7 @@
 <body>
     <div class="form-container">
         <h2>User Registration</h2>
-        <form id="registrationForm" action="http://20.15.112.217:5000/submit" method="POST" onsubmit="return validateForm()">
+        <form id="registrationForm" action="http://<frontend VM public IP>:5000/submit" method="POST" onsubmit="return validateForm()">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
